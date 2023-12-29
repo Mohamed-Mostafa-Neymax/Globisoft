@@ -1,0 +1,86 @@
+<section class="py-3 py-md-4 py-lg-5">
+    <div class="py-3 py-md-4 py-lg-5">
+        <div class="container pt-3 pt-md-4 pt-lg-5">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    
+                        <app-title-section>
+                            <span black>Get in Touch</span>
+                        </app-title-section>
+                        <app-text classes="bigSizeLowWeight gray-1 medium-line-height mb-4 mb-lg-5">
+                            Fill up the form our team will get back to you within 24 Hours
+                        </app-text>
+                        <form [formGroup]="contactForm" (ngSubmit)="submitHandler()">
+
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <label for="category">
+                                        <app-text classes="bigSizeMediumWeight secondary-7 mb-3">Category</app-text>
+                                    </label>
+                                    <mat-form-field appearance="outline" class="mb-3 w-100" >
+                                        <mat-select id="category" formControlName="category" placeholder="Input your Category in here" 
+                                        (openedChange)="isDropdownOpened = $event">
+                                            <mat-option value="Angular">Angular</mat-option>
+                                            <mat-option value="React">React</mat-option>
+                                            <mat-option value="Next.js">Next.js</mat-option>
+                                            <mat-option value="Vue">Vue</mat-option>
+                                            <mat-option value="Nuxt.js">Nuxt.js</mat-option>
+                                        </mat-select>
+                                        <mat-icon matSuffix *ngIf="!isDropdownOpened">expand_more</mat-icon>
+                                        <mat-icon matSuffix *ngIf="isDropdownOpened">expand_less</mat-icon>
+                                    </mat-form-field>
+
+                                    <label for="phone">
+                                        <app-text classes="bigSizeMediumWeight secondary-7 mb-3">Phone</app-text>
+                                    </label>
+                                    <mat-form-field appearance="outline" class="mb-3 w-100">
+                                        <input id="phone" class="w-100" matInput formControlName="phone" placeholder="Input your Phone in here">
+                                        <mat-error>Phone is Required.</mat-error>
+                                    </mat-form-field>
+                                </div>
+
+
+
+
+                                <div class="col-12 col-lg-6">
+                                    <label for="fullName">
+                                        <app-text classes="bigSizeMediumWeight secondary-7 mb-3">Full Name</app-text>
+                                    </label>
+                                    <mat-form-field appearance="outline" class="mb-3 w-100">
+                                        <input id="fullName" class="w-100" matInput formControlName="fullName" placeholder="Input your full name in here">
+                                        <mat-error>Full Name is Required.</mat-error>
+                                    </mat-form-field>
+
+                                    <label for="email">
+                                        <app-text classes="bigSizeMediumWeight secondary-7 mb-3">Email</app-text>
+                                    </label>
+                                    <mat-form-field appearance="outline" class="mb-3 w-100">
+                                        <input id="email" class="w-100" matInput formControlName="email" placeholder="Input your Email in here">
+                                        <mat-error>Email is Required.</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <label for="message">
+                                <app-text classes="bigSizeMediumWeight secondary-7 mb-3">Message</app-text>
+                            </label>
+                            <mat-form-field appearance="outline" class="mb-3 w-100">
+                                <textarea id="message" #textarea matInput formControlName="message" minlength="10" maxlength="800" placeholder="Write your messages in here"></textarea>
+                                <mat-hint align="end">{{textarea.value.length}} / 800</mat-hint>
+                                <mat-error>Message is Required and its length between 10 and 800.</mat-error>
+                            </mat-form-field>
+
+                            <app-button
+                                buttonDesign="specialBtn"
+                                classes="position-relative border-0 p-0 red-bg-btn"
+                                btnText="Get in Touch"
+                                buttonType="submit"
+                                [buttonDisabled]="contactForm.invalid"></app-button>
+                        </form>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <img class="w-100 mt-5 mt-lg-0" src="/assets/images/contact-us.png" alt="contact-us">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

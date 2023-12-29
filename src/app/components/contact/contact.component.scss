@@ -1,0 +1,13 @@
+@import '/src/variables';
+
+::ng-deep .mat-mdc-select-arrow-wrapper { opacity: 0; }
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__leading {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-color: $gray-color-12;
+}
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__trailing {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-color: $gray-color-12;
+}

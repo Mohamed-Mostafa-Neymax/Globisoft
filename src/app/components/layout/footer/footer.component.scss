@@ -1,0 +1,39 @@
+@import '/src/_variables';
+
+footer {
+    color: $white-color;
+
+    & > div:first-child {
+        background-image: linear-gradient(to right, $secondary-color-1, $secondary-color-4);
+        input {
+            padding: 12px 16px;
+            border-radius: 38px;
+            border: unset;
+            outline: unset;
+            color: #000;
+        }
+        p:first-child {
+            font-weight: 600;
+            font-size: 20px;
+        }
+    }
+
+    & > div:last-child {
+        background-color: $secondary-color-5;
+        font-size: 1rem;
+        span:not(:only-child) {
+            font-weight: 600;
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    footer {
+        & > div:first-child {
+            padding-top: 96px !important;
+            padding-bottom: 96px !important;
+        }
+    }
+}
+
+

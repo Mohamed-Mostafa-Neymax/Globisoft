@@ -1,0 +1,79 @@
+<!-- <section class="py-3 py-md-4 py-lg-5">
+    <div class="container">
+        <main class="w-100 position-relative">
+            <swiper-container #projectsSwiperRef>
+                <swiper-slide>
+                    <div class="project-slide">
+                        <img src="/assets/images/home/project-1.png" alt="projects-1">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="project-slide">
+                        <img src="/assets/images/home/project-2.png" alt="projects-2">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="project-slide">
+                        <img src="/assets/images/home/project-3.png" alt="projects-3">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="project-slide">
+                        <img src="/assets/images/home/project-4.png" alt="projects-4">
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="project-slide">
+                        <img src="/assets/images/home/project-5.png" alt="projects-5">
+                    </div>
+                </swiper-slide>
+            </swiper-container>
+            <div class="swiper-btns d-flex justify-content-end position-relative gap-3 gap-md-5">
+                <app-button
+                    buttonType="normalBtn"
+                    classes="projects-prev circle-blue-btn d-flex align-items-center rounded-circle p-2 p-md-3">
+                    <mat-icon>arrow_back</mat-icon>
+                </app-button>
+                <app-button
+                    buttonType="normalBtn"
+                    classes="projects-next circle-blue-btn d-flex align-items-center rounded-circle p-2 p-md-3">
+                    <mat-icon>arrow_forward</mat-icon>
+                </app-button>
+            </div>
+        </main>
+    </div>
+</section> -->
+
+<section class="py-3 py-md-4 py-lg-5 mb-5 mb-lg-0">
+    <div class="container pt-3 pt-md-4 pt-lg-5">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <app-title-section>
+                    <span blue-text>Clients & Partners</span>
+                </app-title-section>
+            </div>
+        </div>
+        <main class="w-100 position-relative">
+            <swiper-container #swiperPartnersRef>
+                <swiper-slide *ngFor="let slide of partnersSlides">
+                    <img 
+                        [src]="slide.imgPath" 
+                        [alt]="slide.title"
+                    >
+                </swiper-slide>
+            </swiper-container>
+            <!-- <div class="swiper-btns d-flex justify-content-end position-relative gap-3 gap-md-5">
+                <app-button
+                    buttonType="normalBtn"
+                    classes="swiper-btn-prev circle-blue-btn d-flex align-items-center rounded-circle p-2 p-md-3">
+                    <mat-icon>arrow_back</mat-icon>
+                </app-button>
+                <app-button
+                    buttonType="normalBtn"
+                    classes="swiper-btn-next circle-blue-btn d-flex align-items-center rounded-circle p-2 p-md-3">
+                    <mat-icon>arrow_forward</mat-icon>
+                </app-button>
+            </div> -->
+        </main>
+    </div>
+</section>

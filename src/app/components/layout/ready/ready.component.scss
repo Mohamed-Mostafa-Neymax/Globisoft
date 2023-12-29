@@ -1,0 +1,18 @@
+@import '/src/_variables';
+
+section {
+    background-image: url(/assets/images/home/ready-bg.png), linear-gradient(to right, $secondary-color-1, $secondary-color-6);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    p:first-child {
+        line-height: 1.4;
+        font-size: 3vw;
+        font-weight: 700;
+    }
+
+    p:nth-child(2) {
+        line-height: 1.5;
+        font-size: 20px;
+    }
+}

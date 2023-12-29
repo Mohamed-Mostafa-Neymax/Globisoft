@@ -1,0 +1,109 @@
+@import '/src/_variables';
+
+@mixin red-btn-first-part {
+    z-index: 2;
+    div:first-child { border-radius: 2rem; }
+}
+
+@mixin red-btn-last-part {
+    z-index: 3;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    background-color: unset;
+    div:first-child { border-radius: 32px; }
+}
+
+@mixin btn-colors($globalColor, $rareColor, $btnBgColor, $btnColor, $borderColor) {
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    & > div { div { border: 1px solid $borderColor; } }
+    & > div:first-child { 
+        @include red-btn-first-part; 
+        & > div:first-child { background-color: $btnBgColor; color: $btnColor; }
+        & > div:last-child { background-color: $btnBgColor; color: $btnColor; }
+    }
+    & > div:last-child {
+        @include red-btn-last-part;
+        div { background-color: $globalColor; }
+    }
+    &:hover {
+        color: $rareColor;
+        & > div:last-child { animation-name: LeftSide; }
+    }
+    &:not(:hover) {
+        color: $globalColor;
+        & > div:last-child { animation-name: RightSide; }
+    }
+}
+
+.static-btn {
+    // padding: 16px 24px;
+    border-radius: 43px;
+    border: unset;
+}
+
+.static-btn-size1 {
+    font-weight: 600;
+    font-size: 20px;
+}
+.static-btn-size2 {
+    font-weight: 600;
+    font-size: 16px;
+}
+.static-btn-color1 {
+    background-color: $primary-color;
+    color: $white-color;
+}
+.static-btn-color2 {
+    color: $secondary-color-1;
+    background-color: transparent;
+    border: 1px solid $secondary-color-1;
+}
+
+.static-btn-color2:hover {
+    color: $white-color;
+    background-color: $secondary-color-1;
+    border: 1px solid transparent;
+}
+
+.white-btn {
+    @include btn-colors($white-color, $secondary-color-1, transparent, $white-color, $white-color);
+}
+
+.red-btn {
+    @include btn-colors($primary-color, $white-color, transparent, $white-color, $primary-color);
+}
+
+.white-over-btn {
+    @include btn-colors($secondary-color-1, $white-color, $white-color, $primary-color, $secondary-color-1);
+}
+
+.red-bordered-btn {
+    @include btn-colors($primary-color, $white-color, transparent, $primary-color, $primary-color);
+}
+
+.red-bg-btn {
+    @include btn-colors($secondary-color-1, $white-color, $primary-color, $white-color, $white-color);
+}
+
+@keyframes LeftSide {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+@keyframes RightSide {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+.circle-blue-btn {
+    border: 1px solid $secondary-color-1;
+    color: $secondary-color-1;
+}
+
+.circle-blue-btn:hover {
+background-color: $secondary-color-1;
+color: $white-color;
+}

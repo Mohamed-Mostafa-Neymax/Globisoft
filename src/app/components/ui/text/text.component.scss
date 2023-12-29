@@ -1,0 +1,74 @@
+@import '/src/_variables';
+
+.lowSizeLowWeight {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.mediumSizeLowWeight {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.bigSizeLowWeight {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.largeSizeLowWeight {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.lowSizeBigWeight {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.mediumSizeBigWeight {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.lowSizeMediumWeight {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.bigSizeMediumWeight {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.bigSizeBigWeight {
+    font-size: 24px;
+    font-weight: 600;
+}
+.largeSizeBigWeight {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.gray-1 { color: $gray-color-1; }
+.gray-2 { color: $gray-color-2; }
+.gray-4 { color: $gray-color-4; }
+.gray-5 { color: $gray-color-5; }
+.gray-6 { color: $gray-color-6; }
+.gray-7 { color: $gray-color-7; }
+.gray-9 { color: $gray-color-9; }
+.gray-11 { color: $gray-color-11; }
+.secondary-1 { color: $secondary-color-1; }
+.secondary-2 { color: $secondary-color-2; }
+.secondary-3 { color: $secondary-color-3; }
+.secondary-7 { color: $secondary-color-7; }
+.red-color { color: $primary-color; }
+.low-line-height { line-height: 25px; }
+.medium-line-height { line-height: 32px; }
+.big-line-height { line-height: 29.26px; }
+.large-line-height { line-height: 40px; }
+
+@media only screen and (max-width: 770px) {
+    .largeSizeBigWeight {
+        font-size: 24px;
+    }
+}

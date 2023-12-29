@@ -1,0 +1,36 @@
+@import '/src/_variables';
+
+section {
+    background-image: linear-gradient(to right, $secondary-color-1, $secondary-color-4);
+    background-repeat: no-repeat;
+    background-size: 100% 65%;
+    p:first-child {
+        line-height: 1.4;
+        font-size: 3vw;
+        font-weight: 700;
+    }
+
+    .numberCard {
+        background-color: $white-color;
+        border-radius: 1.5rem;
+        p {
+            font-size: 63px;
+            font-weight: 700;
+            color: $primary-color;
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) { 
+    section { 
+        background-size: 100% 91%;
+        .numberCard {
+            p {
+                font-size: 2rem;
+            }
+        }
+    } 
+}
+@media only screen and (min-width: 451px) and (max-width: 667px) { section { background-size: 100% 88%; } }
+@media only screen and (min-width: 668px) and (max-width: 768px) { section { background-size: 100% 78%; } }
+@media only screen and (min-width: 769px) and (max-width: 1024px) { section { background-size: 100% 75%; } }

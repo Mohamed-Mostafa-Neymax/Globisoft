@@ -1,0 +1,24 @@
+<section class="py-3 py-md-4 py-lg-5" increaseOnScroll>
+    <div class="container py-3 py-md-4 py-lg-5">
+        <p class="fs-1 text-white mb-3 mb-lg-4">Get in Touch with Us Today Discover Our Expert Logistics Services</p>
+        <app-text classes="largeSizeLowWeight gray-9 mb-3 mb-lg-4 large-line-height">
+            At [Company Name], we offer reliable and cost-effective logistics solutions to help you streamline your supply chain. Contact us today to learn more about how our services can benefit your business or request a quote for customized 
+        </app-text>
+        <div class="row row-gap-4">
+            <div 
+                class="col-12 col-md-6 col-lg-4 col-xl-3"
+                *ngFor="let service of Logistics; let serviceIndex = index;">
+                    <div class="numberCard text-center w-100 p-4 p-lg-5">
+                        <p class="m-0">
+                            <span *ngIf="serviceIndex === 0 || serviceIndex === 1">0</span>{{ service.startValue }}<span *ngIf="serviceIndex === 2 || serviceIndex === 3">+</span>
+                        </p>
+                        <app-text>{{ service.title }}</app-text>
+                    </div>
+                </div>
+                <img 
+                    src="/assets/images/about-us/logistics.png" 
+                    alt="logistics"
+                    class="w-100 mt-4 mt-lg-5">
+        </div>
+    </div>
+</section>

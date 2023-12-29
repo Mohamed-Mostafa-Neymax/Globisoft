@@ -1,0 +1,22 @@
+<div 
+    class="d-flex gap-4 gap-lg-5"
+    [ngClass]="{'mb-3': journeyIndex < 4}">
+    <div class="d-flex flex-column align-items-center">
+        <img 
+            src="/assets/images/about-us/small-logo.png" 
+            alt="small-logo"
+            class="mb-3">
+        <div class="line h-100"></div>
+        <div 
+            class="circle"
+            *ngIf="journeyIndex > 3"></div>
+        <!-- <div 
+            class="line h-100"
+            *ngIf="journeyIndex < 4"></div> -->
+    </div>
+    <div>
+        <app-text classes="lowSizeBigWeight red-color mb-2">{{ journey.duration }}</app-text>
+        <app-text classes="largeSizeBigWeight secondary-3 large-line-height mb-2">{{ journey.title }}</app-text>
+        <app-text classes="lowSizeLowWeight gray-5 low-line-height">{{ journey.description }}</app-text>
+    </div>
+</div>
