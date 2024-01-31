@@ -1,0 +1,58 @@
+@import '/src/_variables';
+.carousel-caption {
+    background: linear-gradient(313.21deg, rgba(23, 58, 115, 0) 40.3%, rgba(4, 24, 56, 0.75) 62.7%);
+    bottom: 0rem;
+    .gl-content {
+        width: 50vw;
+
+        p:first-child {
+            line-height: 1.4;
+            font-size: 3vw;
+            font-weight: 700;
+        }
+
+        p:nth-child(2) {
+            line-height: 1.5;
+            font-size: 20px;
+        }
+    }
+}
+
+.swiper-pagi {
+    position: relative;
+    z-index: 3;
+    bottom: 50px;
+    margin-bottom: -25px;
+}
+
+::ng-deep .swiper-pagi .swiper-pagination-bullet {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: $white-color;
+    background: transparent;
+    padding-bottom: 1rem;
+    opacity: 1;
+    font-weight: 700;
+    margin: 0px 0.8rem !important;
+    cursor: pointer;
+}
+
+::ng-deep .swiper-pagi .swiper-pagination-bullet-active {
+    color: $primary-color;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+    background: transparent;
+    bottom: 1rem;
+}
+
+::ng-deep {
+    @media only screen and (max-width: 600px) {
+        .swiper-pagi .swiper-pagination-bullet {
+            font-size: 1rem !important;
+        }
+    }
+}

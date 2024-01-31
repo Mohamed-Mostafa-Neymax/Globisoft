@@ -1,0 +1,91 @@
+<section class="py-3 py-md-4 py-lg-5">
+    <div class="py-3 py-md-4 py-lg-5">
+        <div 
+            class="container"
+            [ngClass]="{'pt-3 pt-md-4 pt-lg-5': !isProjectsForHome}">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <app-title-section>
+                        <span blue-text>Our Best Work of </span>
+                        <span red-text>Successful Projects</span>
+                    </app-title-section>
+                </div>
+            </div>
+            <div class="row mb-3 mb-lg-5">
+                <div class="col-12 col-lg-8">
+                    <app-text classes="bigSizeLowWeight gray-4 medium-line-height mb-3 mb-lg-0">
+                        We start by getting to know our clients, their business goals, and their target audience. This involves conducting research, analyzing data, and discussing ideas with our clients to gain a deep understanding of their needs.
+                    </app-text>
+                </div>
+                <div 
+                    class="col-12 col-lg-4 d-flex justify-content-end"
+                    *ngIf="isProjectsForHome">
+                    <app-button 
+                        buttonDesign="specialBtn"
+                        buttonType="button"
+                        classes="position-relative border-0 p-0 red-bordered-btn"
+                        btnText="Show More Projects" 
+                        to="/portfolio">
+                    </app-button>
+                </div>
+            </div>
+
+            <div class="position-relative px-5" *ngIf="isProjectsForHome">
+                <div class="px-4 px-md-5">
+                    <div class="swiper-container w-100 overflow-hidden">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" *ngFor="let slide of projectsSlides">
+                                <div class="d-flex justify-content-center position-relative p-2 project-content">
+                                    <img 
+                                        class="w-100"
+                                        [src]="slide.imgPath"
+                                        [alt]="slide.title">
+                                    <a class="m-3 p-3 position-absolute bottom-0" [routerLink]="['/portfolio', slide['id']]">
+                                        <div class="d-flex gap-5 justify-content-between">
+                                            <h1>Mobile App Design & Develop By IGIobsyn Team</h1>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <p class="text-nowrap m-0">See Project</p>
+                                                <div class="p-1 p-md-2 rounded-circle d-flex align-items-center"><mat-icon>south_east</mat-icon></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="swiper-button-next p-2"><mat-icon>arrow_forward</mat-icon></button>
+                    <button class="swiper-button-prev p-2"><mat-icon>arrow_back</mat-icon></button>
+                </div>
+            </div>
+
+
+            <div class="swiper-pagination position-relative mt-5"></div>
+
+            <div class="row" *ngIf="!isProjectsForHome">
+                <div 
+                    class="col-12 col-md-6 mt-3"
+                    *ngFor="let project of projectsSlides">
+                    <div class="d-flex justify-content-center position-relative p-2 project-content">
+                        <img 
+                            class="w-100"
+                            [src]="project.imgPath"
+                            [alt]="project.title">
+                        <a 
+                            [routerLink]="['/portfolio', project['id']]"
+                            class="m-3 p-3 position-absolute bottom-0">
+                            <div class="d-flex gap-5 justify-content-between">
+                                <h1>Mobile App Design & Develop By IGIobsyn Team</h1>
+                                <div class="d-flex align-items-center gap-2">
+                                    <p class="text-nowrap m-0">See Project</p>
+                                    <div class="p-1 p-md-2 rounded-circle d-flex align-items-center"><mat-icon>south_east</mat-icon></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

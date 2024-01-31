@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-center mt-4">
+            <div class="paginationWrapper d-flex text-center">
+                <span 
+                    class="d-inline-flex gap-1 align-items-center" 
+                    (click)="paginateDirectionHandler('prev')">
+                    <mat-icon>arrow_back</mat-icon> 
+                    <span class="d-none d-sm-inline">Previous</span>
+                </span>
+                <span 
+                    class="d-inline-flex align-items-center" 
+                    [ngClass]="{'activePage': num === activePage}"
+                    (click)="paginateHandler(num, 'first-nums')" 
+                    *ngFor="let num of firstPaginationNums; let pageIndex = index;">{{ num }}</span>
+                <span 
+                    class="d-inline-flex align-items-center dots" 
+                    *ngIf="lastPaginationNums[0] - firstPaginationNums[firstPaginationNums.length - 1] !== 1">...</span>
+                <span 
+                    class="d-inline-flex align-items-center" 
+                    [ngClass]="{'activePage': num === activePage}"
+                    (click)="paginateHandler(num)" 
+                    *ngFor="let num of lastPaginationNums; let pageIndex = index;">{{ num }}</span>
+                <span 
+                    class="d-inline-flex gap-1 align-items-center"
+                    (click)="paginateDirectionHandler('next')">
+                    <span class="d-none d-sm-inline">Next</span> <mat-icon>arrow_forward</mat-icon>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<ul [class]="classes">
+    <li class="nav-item me-4" *ngFor="let link of navLinks; let linkIndex = index;">
+        <a 
+            class="nav-link text-nowrap position-relative px-0 py-2" 
+            *ngIf="linkIndex !== 2; else products"
+            [ngClass]="setNavColor()"
+            [routerLink]="link.path"
+            routerLinkActive="active">
+            <div class="animated-line position-absolute w-100"></div>
+            <span>{{ link.title }}</span>
+        </a>
+        <ng-template #products>
+            <a 
+                [matMenuTriggerFor]="menu"
+                [ngClass]="setNavColor('products')"
+                class="d-flex nav-link text-nowrap position-relative px-0 py-2">
+                <div class="animated-line position-absolute w-100"></div>
+                <span>{{ link.title }}</span> <mat-icon class="m-0">keyboard_arrow_down</mat-icon>
+            </a>
+            <mat-menu #menu="matMenu" xPosition="before">
+                <a 
+                    mat-menu-item 
+                    [routerLink]="['/products', product['id']]"
+                    *ngFor="let product of link.products">{{ product.title }}</a>
+            </mat-menu>
+        </ng-template>
+    </li>
+</ul>

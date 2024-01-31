@@ -1,0 +1,47 @@
+<section class="py-3 py-md-4 py-lg-5">
+    <div class="py-3 py-md-4 py-lg-5">
+        <div class="container text-center">
+            <app-title-section>
+                <span blue-text>Our Customer </span>
+                <span red-text>Reviews</span>
+            </app-title-section>
+            <div class="mb-4 mb-lg-5">
+                <app-text classes="bigSizeLowWeight gray-4 medium-line-height mb-3 mb-lg-0">
+                    Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text
+                </app-text>
+            </div>
+
+            <div class="position-relative px-0 px-md-5">
+                <div class="px-4 px-md-5">
+                    <div class="swiper-progress-container w-100 overflow-hidden">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" *ngFor="let slide of projectsSlides">
+                                <div class="review-wrapper">
+                                    <div class="reviewSlide text-start d-flex flex-column gap-4 gap-lg-5 p-4 p-lg-5">
+                                        <app-text classes="mediumSizeLowWeight gray-1 low-line-height">{{ slide.review }}</app-text>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <img [src]="slide.imgPath" [alt]="slide.name">
+                                            <div>
+                                                <app-text classes="bigSizeBigWeight secondary-1 mb-2">{{ slide.name }}</app-text>
+                                                <app-text classes="mediumSizeLowWeight gray-7">{{ slide.job }}</app-text>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 d-flex justify-content-between align-items-center">
+                            <button class="swiper-prog-button-prev p-2 d-flex"><mat-icon>arrow_back</mat-icon></button>
+                            <div class="d-flex align-items-center gap-2 w-75">
+                                <div>{{'0' + currentProject}}</div>
+                                <div class="swiper-pagination-progressbar position-relative w-100"></div> 
+                                <div>{{'0' + (projectsSlides.length)}}</div>
+                            </div>
+                            <button class="swiper-prog-button-next p-2 d-flex" (click)="nextSlide()"><mat-icon>arrow_forward</mat-icon></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+<button 
+    [type]="buttonType"
+    [disabled]="buttonDisabled"
+    *ngIf="buttonDesign === 'specialBtn'; else normalBtn"
+    [class]="classes"
+    (click)="buttonType === 'button' ? submitHandler() : null"
+    >
+    <div class="d-flex position-relative text-nowrap">
+        <div class="p-2 p-sm-2 p-md-3 d-flex align-items-center">
+            <span>{{ btnText }}</span>
+        </div>
+        <div class="p-2 p-sm-2 p-md-3 rounded-circle d-flex align-items-center"><mat-icon>south_east</mat-icon></div>
+    </div>
+    <div class="d-flex position-absolute top-0 text-nowrap overflow-hidden h-100">
+        <div class="p-2 p-sm-2 p-md-3 d-flex align-items-center">
+            <span>{{ btnText }}</span>
+        </div>
+        <div class="p-2 p-sm-2 p-md-3 rounded-circle d-flex align-items-center"><mat-icon>south_east</mat-icon></div>
+    </div>
+</button>
+
+<ng-template #normalBtn>
+    <button
+        [type]="buttonType"
+        (click)="buttonType === 'button' ? submitHandler() : null"
+        [class]="classes">
+        <ng-content></ng-content>
+    </button>
+</ng-template>

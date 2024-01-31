@@ -1,0 +1,23 @@
+@import '/src/_variables';
+
+ul li {
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    a.active, a.productsActive {
+        color: $primary-color;
+        .animated-line {
+            animation: 300ms ease-in-out forwards MoveLine;
+            background-color: $primary-color;
+            bottom: 0px;
+            left: -70px;
+            height: 2px;
+        }
+    }
+}
+::ng-deep .nav-item .mat-icon { height: 18px; }
+.whiteNavColor { color: $white-color; }
+.darkNavColor { color: $secondary-color-1; }
+
+@keyframes MoveLine { from {left: -70px; bottom: 0px;} to {left: 0px; bottom: 0px;} }
+@media only screen and (max-width: 991px) { a { color: $white-color !important; } }

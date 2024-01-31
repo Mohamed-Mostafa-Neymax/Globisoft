@@ -1,0 +1,28 @@
+<section class="py-3 py-md-4 py-lg-5">
+    <div class="container py-3 py-md-4 py-lg-5 px-lg-5">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <app-title-section>
+                    <span blue-text>Meet our </span>
+                    <span red-text>team </span>
+                </app-title-section>
+                <app-text classes="bigSizeLowWeight gray-4 medium-line-height mb-4 mb-lg-5">
+                    Our philosophy is simple — hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.
+                </app-text>
+            </div>
+        </div>
+        <div class="row row-gap-4">
+            <div 
+                class="col-12 col-md-6 col-lg-4 col-xl-3"
+                *ngFor="let member of team">
+                    <div class="memberCard h-100 w-100 text-center p-4 p-lg-5 d-flex flex-column justify-content-between">
+                        <div>
+                            <img [src]="member.image" alt="member" class="mb-4">
+                            <app-text classes="mediumSizeBigWeight secondary-1 mb-3">{{ member.name }}</app-text>
+                        </div>
+                        <app-text classes="lowSizeBigWeight gray-1">{{ member.job }}</app-text>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>

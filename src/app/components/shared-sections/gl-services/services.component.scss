@@ -1,0 +1,23 @@
+@import '/src/_variables';
+
+.bg-for-home {
+    background-color: $bg-section;
+}
+
+.serviceCard {
+    border: 1px solid $gray-color-8;
+    border-radius: 32px;
+    div:first-child span:first-child {
+        width: 47px;
+        border-bottom: 1px solid $primary-color;
+    }
+    a {
+        text-decoration: none;
+        width: fit-content;
+    }
+}
+
+.serviceCard:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.08);
+}

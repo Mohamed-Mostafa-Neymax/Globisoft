@@ -1,0 +1,14 @@
+.under-development {
+    font-weight: 700;
+    font-size: 1.5rem;
+    position: fixed;
+    z-index: 20;
+    color: white;
+    border-radius: 1.25rem;
+    background-color: #173A73;
+    padding: 1rem;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}

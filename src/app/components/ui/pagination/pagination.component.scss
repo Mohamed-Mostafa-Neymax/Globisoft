@@ -1,0 +1,26 @@
+@import '/src/variables';
+
+.paginationWrapper {
+    border: 1px solid $gray-color-13;
+    border-radius: 9.7px;
+    & > span:first-child, & > span:last-child {
+        padding: 12.13px 19.4px;
+    }
+    & > span {
+        padding: 12.13px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $secondary-color-7;
+        user-select: none;
+    }
+    & > span:not(:last-child) {
+        border-right: 1px solid $gray-color-13;
+    }
+    & > span:not(.dots) {
+        cursor: pointer;
+    }
+    & > .activePage {
+        background-color: $pagination;
+        color: $white-color;
+    }
+}

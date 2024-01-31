@@ -1,0 +1,32 @@
+@import '/src/_variables';
+
+.blog {
+    text-decoration: none;
+    img {
+        border-radius: 1.25rem;
+    }
+    & > div, img {
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+    }
+    .blogBtn {
+        border: 1px solid $primary-color;
+        height: fit-content;
+    }
+    &:hover {
+        img {
+            border-bottom-left-radius: 0rem;
+            border-bottom-right-radius: 0rem;
+        }
+        & > div {
+            box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.08);
+            border-bottom-left-radius: 1.25rem;
+            border-bottom-right-radius: 1.25rem;
+        }
+    }
+}
+
+::ng-deep .blogBtn .mat-icon {
+    color: $primary-color;
+}

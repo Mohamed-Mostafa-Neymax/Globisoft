@@ -1,0 +1,37 @@
+<nav bgOnScroll class="navbar navbar-expand-lg navbar-light w-100">
+    <div class="container">
+        <a 
+            class="navbar-brand d-block d-lg-none" 
+            routerLink="/home">
+            <img src="/assets/images/white-logo.png" alt="gl-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between " id="navbarSupportedContent">
+            <a class="navbar-brand d-none d-lg-block" routerLink="/home">
+                <img [src]="navColorWhite ? '/assets/images/white-logo.png' : '/assets/images/dark-logo.png'" alt="gl-logo">
+            </a>
+            <app-nav-links 
+                classes="navbar-nav mb-2 mb-lg-0 flex-wrap"
+                [isNavfooter]="false"
+                [navColorWhite]="navColorWhite"
+                [productsActive]="productsActive" />
+            <div class="d-flex align-items-center">
+                <button 
+                    mat-button 
+                    [matMenuTriggerFor]="menu" 
+                    type="button" 
+                    class="d-flex flex-row-reverse"
+                    [ngClass]="{whiteNavColor: navColorWhite, darkNavColor: !navColorWhite}">
+                    <span>{{ lang }}</span> <mat-icon class="m-0">keyboard_arrow_down</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" xPosition="before">
+                    <button mat-menu-item (click)="setLangHandler('ar')">Arabic</button>
+                    <button mat-menu-item (click)="setLangHandler('en')">English</button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+</nav>

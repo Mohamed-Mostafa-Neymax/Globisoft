@@ -1,0 +1,29 @@
+@import '/src/_variables';
+
+nav {
+    position: fixed;
+    z-index: 4;
+    img { max-width: 200px; }
+    button {
+        color: $white-color;
+    }
+    transition: background-color 0.5s linear;
+    .whiteNavColor { color: $white-color !important; }
+    .darkNavColor { color: $secondary-color-7 !important; }
+}
+
+::ng-deep .mat-mdc-menu-trigger {
+    font-family: 'Montserrat' !important; 
+}
+
+
+@media only screen and (max-width: 991px) {
+    nav {
+        position: relative;
+        background-image: linear-gradient(to right, $secondary-color-1, $secondary-color-4);
+        img { width: 140px; }
+        a {
+            color: $white-color !important;
+        }
+    }
+}

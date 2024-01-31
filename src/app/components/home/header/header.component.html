@@ -1,0 +1,24 @@
+<section class="w-100 position-relative">
+    <!-- <div class="gradient-layer position-absolute w-100 h-100"></div> -->
+    <swiper-container 
+        #swiperHeaderRef
+        init="false">
+        <swiper-slide *ngFor="let slide of slides; let i = index">
+            <img [src]="slide.imagePath" class="d-block w-100" [alt]="slide.title">
+            <div class="carousel-caption start-0 end-0 h-100 text-start d-none d-md-block">
+                <div class="container d-flex align-items-end align-items-md-center h-100">
+                    <div class="gl-content">
+                        <p>{{ slide.title }}</p>
+                        <p>{{ slide.description }}</p>
+                        <app-button
+                            buttonDesign="specialBtn"
+                            buttonType="button"
+                            classes="position-relative border-0 p-0 white-btn mt-4"
+                            btnText="Scroll to Discover"></app-button>
+                    </div>
+                </div>
+            </div>
+        </swiper-slide>
+    </swiper-container>
+    <div class="swiper-pagi container text-end"></div>
+</section>

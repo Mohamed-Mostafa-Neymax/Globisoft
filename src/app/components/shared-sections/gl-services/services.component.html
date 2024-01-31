@@ -1,0 +1,58 @@
+<section 
+    class="py-3 py-md-4 py-lg-5"
+    [ngClass]="{'bg-for-home': !allServices}">
+    <div class="py-3 py-md-4 py-lg-5">
+        <div 
+            class="container"
+            [ngClass]="{'pt-3 pt-md-4 pt-lg-5': allServices}">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <app-title-section>
+                        <span blue-text>Offering a variety of high-en services</span>
+                    </app-title-section>
+                </div>
+            </div>
+            <div class="row mb-3 mb-lg-5">
+                <div class="col-12 col-lg-8">
+                    <app-text classes="bigSizeLowWeight gray-4 medium-line-height mb-3 mb-lg-0">
+                        Despite being a small team, we believe that our size gives us an advantage, allowing us to be nimble, adaptable, and able to work closely.
+                    </app-text>
+                </div>
+                <div class="col-12 col-lg-4 d-flex justify-content-end" *ngIf="!allServices">
+                    <app-button
+                        buttonDesign="specialBtn"
+                        buttonType="button"
+                        classes="position-relative border-0 p-0 red-bordered-btn"
+                        btnText="Show More Services"
+                        to="/services"></app-button>
+                </div>
+            </div>
+            <div class="row">
+                <div 
+                    class="col-12 col-md-6 col-xxl-3 mt-3"
+                    *ngFor="let service of getServices(); let serviceIndex = index;">
+                    <div class="serviceCard d-flex flex-column justify-content-between gap-3 gap-xl-4 h-100 p-3 p-md-4">
+                        <div>
+                            <div class="d-flex align-items-center mb-3 mb-lg-4 mb-lg-5">
+                                <span class="d-inline-block me-3"></span>
+                                <app-text classes="bigSizeBigWeight red-color">{{ '0' + (serviceIndex + 1) }}</app-text>
+                            </div>
+                            <app-text classes="largeSizeBigWeight secondary-3 large-line-height">{{ service.title }}</app-text>
+                        </div>
+                        <div>
+                            <app-text classes="lowSizeLowWeight gray-2 low-line-height mb-4 mb-xl-5">{{ service.description }}</app-text>
+                            <a 
+                                [routerLink]="['/services', service['id']]"
+                                class="d-flex align-items-center">
+                                <app-text classes="lowSizeBigWeight secondary-1 d-flex align-items-center gap-2">
+                                    <span>Learn more</span> <mat-icon>arrow_right_alt</mat-icon>
+                                </app-text>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

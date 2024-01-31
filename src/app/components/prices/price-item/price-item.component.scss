@@ -1,0 +1,19 @@
+@import '/src/variables';
+
+main {
+    border: 0.91px solid $gray-color-10;
+    border-radius: 14.55px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.08);
+    p:first-child {
+        font-weight: 600;
+        font-size: 43.64px;
+        line-height: 43.64px;
+    }
+    div > p:first-child {
+        font-weight: 600;
+        font-size: 18.18px;
+    }
+    .sign img {
+        width: 21.82px;
+    }
+}

@@ -1,0 +1,12 @@
+@import '/src/_variables';
+
+.line {
+    border-left: 2px solid $primary-color;
+}
+
+.circle {
+    width: 10px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: $primary-color;
+}

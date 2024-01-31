@@ -1,0 +1,52 @@
+@import '/src/_variables';
+@import 'swiper/swiper-bundle.css';
+
+section {
+  background-color: $bg-section;
+}
+
+::ng-deep .project-content .mat-icon {
+    color: $primary-color;
+}
+
+button.swiper-prog-button-next:after, button.swiper-prog-button-prev:after {
+  content: '' !important;
+}
+
+button.swiper-prog-button-next, button.swiper-prog-button-prev {
+  border: 1px solid transparent;
+  color: $white-color;
+  background-color: $secondary-color-1;
+  border-radius: 50%;
+}
+
+button.swiper-prog-button-next.swiper-button-disabled, button.swiper-prog-button-prev.swiper-button-disabled {
+  opacity: 1 !important;
+  border: 1px solid $gray-color-14;
+  color: $primary-color;
+  background-color: $white-color;
+}
+::ng-deep .swiper-pagination-progressbar-fill {
+  display: block;
+  height: 100%;
+  background-color: $primary-color;
+}
+
+.swiper-prog-button-prev + div {
+  color: $secondary-color-1;
+  font-weight: 700;
+  font-size: 14px;
+}
+.review-wrapper {
+  padding: 4px;
+  background-image: linear-gradient(0deg, transparent, transparent);
+  border-radius: 32px;
+}
+.reviewSlide {
+  background-color: $white-color;
+  border-radius: 32px;
+}
+
+.review-wrapper:hover {
+  background-image: linear-gradient(67deg, transparent, $secondary-color-1);
+}

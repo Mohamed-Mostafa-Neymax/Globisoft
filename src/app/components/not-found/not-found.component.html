@@ -1,0 +1,33 @@
+<section class="py-3 py-md-4 py-lg-5">
+    <div class="py-3 py-md-4 py-lg-5">
+        <div class="container pt-3 pt-md-4 pt-lg-5">
+            <div class="row">
+                <div class="col-12 col-lg-5">
+                    <div class="d-flex flex-column justify-content-center h-100">
+                        <app-text classes="lowSizeBigWeight red-color mb-2">404 error</app-text>
+                        <app-title-section>
+                            <span black>Page not found</span>
+                        </app-title-section>
+                        <app-text classes="bigSizeLowWeight gray-11 medium-line-height mb-4 mb-lg-5">Sorry, the page you are looking for doesn't exist. Here are some helpful links:</app-text>
+                        <div class="d-flex flex-wrap gap-3">
+                            <app-button
+                                buttonDesign="normalBtn"
+                                buttonType="button"
+                                classes="static-btn static-btn-size2 static-btn-color2 py-2 px-3 py-md-3 px-md-4 h-100"
+                                [back]="true">Go Back</app-button>
+                            <app-button
+                                buttonDesign="specialBtn"
+                                buttonType="button"
+                                classes="position-relative border-0 p-0 red-bg-btn"
+                                btnText="Take me home"
+                                to="/home"></app-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-7">
+                    <img class="w-100 mt-5 mt-lg-0" src="/assets/images/404.png" alt="404">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

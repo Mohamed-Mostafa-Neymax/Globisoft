@@ -1,0 +1,24 @@
+<main class="px-3 pb-4 pt-5 h-100 d-flex flex-column justify-content-between">
+    <app-text classes="largeSizeBigWeight mb-4 text-center">{{ price.title }}</app-text>
+    <div>
+        <div class="text-center">
+            <app-text classes="largeSizeBigWeight red-color mb-3 text-center">{{ price.subTitle }}</app-text>
+            <app-text classes="lowSizeLowWeight gray-6 mb-4">{{ price.type }}</app-text>
+        </div>
+        <div class="mb-4 mb-lg-5">
+            <div
+                class="d-flex gap-2 mb-3 mb-lg-4" 
+                *ngFor="let feature of price.features">
+                <div class="sign">
+                    <img src="/assets/images/icons/correct.png" alt="correct" *ngIf="feature.isAvailable">
+                    <img src="/assets/images/icons/incorrect.png" alt="correct" *ngIf="!feature.isAvailable">
+                </div>
+                <span>{{ feature.title }}</span>
+            </div>
+        </div>
+        <app-button
+            buttonDesign="normalBtn"
+            buttonType="button"
+            classes="static-btn static-btn-size2 static-btn-color1 py-2 px-3 py-md-3 px-md-4">Get Started</app-button>
+    </div>
+</main>
